@@ -3,12 +3,49 @@ const container = document.getElementsByClassName('container')[0];
 const close = document.getElementById('close');
 const screen = document.getElementById('screen');
 const buttons = document.getElementsByClassName('button');
+const footer = document.getElementsByClassName('footer')[0];
 const equal = document.getElementById('equal');
+const ThemeSwitchImage = document.getElementById('ThemeSwitchImage');
 
 let numbers = document.getElementById('numbers');
 let numberScreen = document.getElementById('numberScreen');
+let themeSwitcher = document.getElementById('themeSwitcher');
+
+
 
 let sum = 0; 
+
+themeSwitcher.addEventListener('click', ()=>{
+  if(!themeSwitcher.classList.contains('light')){
+    container.classList.add('light')
+    footer.classList.add('light')
+    numbers.classList.add('light')
+    numberScreen.classList.add('light')
+    themeSwitcher.classList.add('light')
+
+    setTimeout(() => {
+      ThemeSwitchImage.setAttribute('src', '../assets/sun.png')
+    }, 200);
+
+    for (const button of buttons) {
+      button.classList.add('light');
+    }
+  } else{
+    container.classList.remove('light')
+    footer.classList.remove('light')
+    numbers.classList.remove('light')
+    numberScreen.classList.remove('light')
+    themeSwitcher.classList.remove('light')
+
+    setTimeout(() => {
+      ThemeSwitchImage.setAttribute('src', '../assets/moon.png')
+    }, 200);
+    
+    for (const button of buttons) {
+      button.classList.remove('light');
+    }
+  }
+})
 
 openCalc.addEventListener('click', () => {
   container.classList.add('active');

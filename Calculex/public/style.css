@@ -230,16 +230,17 @@ footer{
   padding: 10px;
 }
 
+
 #numbers,
 #numberScreen{
   color: white;
   font-family: Poppins, sans-serif;
+  font-weight: bold;
 }
 
 #numberScreen{
   align-self: flex-end; 
   font-size: 30px;
-  font-weight: bold;
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
@@ -254,4 +255,44 @@ footer{
     width: 40vw;
     height: 80vh;
   }
+}
+
+
+.container.light,
+.footer.light,
+.button.light,
+.button.method.light,
+#numbers.light,
+#numberScreen.light
+.container,
+.footer,
+.button,
+.button.method,
+#numbers,
+#numberScreen{
+  transition: background 1s;
+  transition: color 1s;
+}
+
+.container.light{
+  background: #ffff;
+}
+
+.footer.light{
+  background: #faf3f3fa;
+}
+
+.button.light{
+  color: #333;
+  background-color: #f0ededfa;
+}
+
+.button.method.light{
+  color: #ffff;
+  background-color: #437AEB;
+}
+
+#numbers.light,
+#numberScreen.light{
+  color: #333;
 }
