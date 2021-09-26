@@ -46,6 +46,7 @@ header div p{
 header nav{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 100px;
+  gap: 1vw;
   align-items: center;
   justify-content: center;
 }
@@ -123,15 +124,18 @@ div h1::first-letter
   grid-template-columns: 32px 1fr;
   align-items: center;
   font-weight: 600;
+  box-shadow: 1px 1px 2px #111;
+  padding: 3px;
+  border-radius: 5px;
 }
 
 footer{
   height: 25vh;
-  width: 25vw;
+  width: 40%;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  row-gap: 10px;
+  column-gap: 10px;
   font-family: Poppins, sans-serif;
   font-size: 14px;
 }
@@ -141,7 +145,7 @@ footer{
 .categoryThree{
   display: grid;
   grid-template-columns: 32px 1fr;
-  width: 60%;
+  width: 100%;
   padding: 10px;
   border-radius: 5px;
   align-items: center;
@@ -150,6 +154,7 @@ footer{
 
 .categoryOne{
   background-color: #F78505;
+  padding: 19px;
 }
 
 .categoryOne:hover{
@@ -174,7 +179,7 @@ footer{
 
 .chat{
   width: 23vw;
-  height: 400px;
+  height: 60vh;
   background-color: #ffff;
   position: absolute;
   right: 2%;
@@ -240,4 +245,29 @@ footer{
 #send:hover,
 #close:hover{
   opacity: 0.6;
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px){
+  header div p{
+    display: none;
+  }
+
+  header nav a:last-child{
+    display: none;
+  }
+
+  .categoryOne{
+    padding: 10px;
+  }
+
+  .chat{
+    width: 50vw;
+    height: 300px;
+    bottom: 10%;
+  }
+
+  body{
+    background-position: center;
+  }
+
 }

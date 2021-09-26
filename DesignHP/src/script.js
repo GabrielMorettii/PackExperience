@@ -11,3 +11,6 @@ contato.addEventListener('click', () => {
   }
 })
 
+close.addEventListener('click', () => {
+  chat.classList.remove('active')
+})
