@@ -16,5 +16,9 @@ openCalc.addEventListener('click', () => {
   screen.classList.add('active');
 })
 
-
+close.addEventListener('click', ()=>{
+  container.classList.remove('active');
+  openCalc.classList.remove('opened');
+  screen.classList.remove('active');
+})
 
