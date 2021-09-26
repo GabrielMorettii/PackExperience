@@ -241,3 +241,17 @@ footer{
   font-size: 30px;
   font-weight: bold;
 }
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .container{
+    width: 55vw;
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .container{
+    width: 40vw;
+    height: 80vh;
+  }
+}
