@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/style.css">
+  <title>Gallery</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img width="50px" src="./assets/flower.jpg" alt="FlowerLogo">
+      <span>Galeria</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <img src="./assets/add.png" alt="Add" id="add">
+          <input type="file" name="file" id="file">
+        </li>
+        <li><img id="remove" src="./assets/delete.png" alt="Delete"></li>
+        <li><img id="edit" src="./assets/edit.png" alt="Edit"></li>
+      </ul>
+    </nav>
+
+    <section class="categories grid">
+      <div class="photos grid ">
+        <img src="./assets/gallery.png" alt="galleryicon">
+        <span>Fotos</span>
+      </div>
+        <div class="videos grid">
+        <img src="./assets/play-button.png" alt="playbuttonicon">
+        <span>Videos</span>
+      </div>
+      <div class="gifs grid">
+        <img src="./assets/gif.png" alt="gificon">
+        <span>Gifs</span>
+      </div>
+    </section>
+  </header>
+  <main class="relative">
+    <section class="cards grid">
+      <div class="card">
+        <img src="./assets/lion.jpg" alt="Lion">
+      </div>
+      <div class="card">
+        <img src="./assets/whale.jpg" alt="whale">
+      </div>
+      <div class="card">
+        <img src="./assets/aligator.jpg" alt="aligator">
+      </div>
+      <div class="card">
+        <img src="./assets/monkey.jpg" alt="monkey">
+      </div>
+      <div class="card">
+        <img src="./assets/lion.jpg" alt="Lion">
+      </div>
+      <div class="card">
+        <img src="./assets/whale.jpg" alt="whale">
+      </div>
+      <div class="card">
+        <img src="./assets/aligator.jpg" alt="aligator">
+      </div>
+      <div class="card">
+        <img src="./assets/monkey.jpg" alt="monkey">
+      </div>
+    </section>
+  </main>
+  <div class="modal">
+    <div class="modalImg">
+      <img id="modalImg" src="" alt="PhotoZoomed">
+    </div>
+    <div onclick="closeModal()" id="close">
+      <img src="./assets/cancel.png" alt="FecharIcon">
+    </div>
+  </div>
+  <script src="../public/script.js"></script>
+</body>
+</html>
