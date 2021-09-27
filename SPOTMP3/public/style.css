@@ -43,6 +43,21 @@ body{
   justify-content: center;
 }
 
+#player{
+  position: absolute;
+  left: 20%;
+  top: 1%;
+  /*
+  opacity: 0;
+  visibility: hidden;
+  */
+}
+
+#artistScreen{
+  left: 60%;
+  bottom: 0;
+}
+
 .container{
   background-color: #1E1E1E;  
   padding: 15px;
@@ -68,7 +83,9 @@ main{
   position: relative;
 }
 
-main img{
+main img,
+#player header img,
+.playerButtons img{
   background: linear-gradient(45deg, rgb(50, 50, 50), rgb(30, 30, 30));
   padding: 15px;
   border-radius: 50%;
@@ -133,7 +150,9 @@ footer::-webkit-scrollbar{
 }
 
 main img,
-.playButton:hover{
+.playButton:hover,
+.playerButtons img,
+#player header img{
   cursor: pointer;
 }
 
@@ -248,3 +267,58 @@ main img,
   
   transition: opacity 3s;
 }
+
+/* Player */
+
+#player.container{
+  grid-template-rows: 100px 130px 1fr;
+}
+
+#player header{
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  align-items: center;
+  justify-items: center;
+}
+
+#player footer{
+  grid-template-rows: 80px 120px 100px;
+}
+
+.title{
+  text-align: center;
+}
+
+.title h3{
+  color: #33F2BD;
+  font-family: Poppins, sans-serif;
+}
+
+.title p{
+  margin-top: 10px;
+}
+
+.progressBar{
+  align-self: center;
+  width: 100%;
+  height: 5px;
+  background-color: rgb(50, 50, 50);
+  
+  border-radius: 10px;
+}
+
+.playerButtons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+footer .playerButtons img{
+  border-radius: 45%;
+}
+
+#player header h6 + #menu{
+  border-radius: 40%;
+}
+
