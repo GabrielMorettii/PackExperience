@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="./assets/music.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/icons/music.png" type="image/x-icon">
   <title>SPOTMP3</title>
 </head>
 <body>
@@ -15,14 +15,14 @@
           <h6>STARBOY - THE WEEKEND</h6>
         </header>
         <main>
-          <img class="" id="heart" src="./assets/like.png" alt="HeartLike">
+          <img class="" id="heart" src="./assets/icons/like.png" alt="HeartLike">
           <img id="profile" class="" src="./assets/profile.png" alt="Profile">
-          <img id="dots" src="./assets/more.png" alt="Settings">
+          <img id="dots" src="./assets/icons/more.png" alt="Settings">
           <div class="select">
             <p id="follow">Follow</p>
           </div>
           <div class="verified">
-            <img src="./assets/check.png" alt="Verified">
+            <img src="./assets/icons/check.png" alt="Verified">
           </div>
         </main>
         <footer>
@@ -31,58 +31,58 @@
               <p>All I Know</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/play.png" alt="PlayButton">
+            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>True Colors</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/play.png" alt="PlayButton">
+            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>Star Boy</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/play.png" alt="PlayButton">
+            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
-              <p>Bleeding Lights</p>
+              <p>Blinding Lights</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/play.png" alt="PlayButton">
+            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
-              <p>Bleeding Lights</p>
+              <p>Take My Breath</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/play.png" alt="PlayButton">
+            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
-              <p>Bleeding Lights</p>
+              <p>I Feel It Coming</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/play.png" alt="PlayButton">
+            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
         </footer>
         <div class="modal">
-          <img id="close" src="./assets/close.png" alt="CloseBottom">
+          <img id="close" src="./assets/icons/close.png" alt="CloseBottom">
           <img src="assets/profile.png" alt="ModalImg">
         </div>
     </div>
     <div id="player" class="container">
       <header>
-        <img id="goBack" src="./assets/arrow.png" alt="goBack">
+        <img id="goBack" src="./assets/icons/arrow.png" alt="goBack">
         <h6>PLAYING NOW</h6>
-        <img id="menu" src="./assets/menu.png" alt="menu">
+        <img id="menu" src="./assets/icons/menu.png" alt="menu">
       </header>
       <main>
         <div></div>
-        <img id="profile" class="" src="./assets/profile.png" alt="Profile">
+        <img id="profileAvatar" class="" src="./assets/profile.png" alt="Profile">
         <div></div>
       </main>
       <footer>
@@ -91,17 +91,23 @@
           <p>The Weekend, Daft Punk</p>
         </div>
         <div class="progressBar">
+          <audio controls></audio>
         </div>
         <div class="playerButtons">
-          <img src="./assets/backward-arrows-couple.png" alt="gobackwards">
-          <img src="./assets/pause.png" alt="pause">
-          <img src="./assets/fast-forward-button.png" alt="fastforward">
+          <img src="./assets/icons/backward-arrows-couple.png" alt="gobackwards">
+          <img src="./assets/icons/pause.png" alt="pause">
+          <img src="./assets/icons/fast-forward-button.png" alt="fastforward">
         </div>
       </footer>
     </div>
   </div>
   <div class="circle"></div>
   <div class="circleright"></div>
+
+  <script src="../src/database/data.js"></script>
+  <script src="../src/player.js"></script>
+  <script src="../src/artist.js"></script>
   <script src="../src/script.js"></script>
+
 </body>
 </html>

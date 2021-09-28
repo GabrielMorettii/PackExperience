@@ -92,7 +92,8 @@ main img,
   box-shadow: 1px 1px 5px rgb(22, 22, 22);
 }
 
-#profile{
+#profile,
+#profileAvatar{
   width: 150px;
   height: 150px;
   padding: 0;
@@ -321,4 +322,3 @@ footer .playerButtons img{
 #player header h6 + #menu{
   border-radius: 40%;
 }
-
