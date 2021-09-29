@@ -20,6 +20,15 @@ window.player = {
       progressBar.setAttribute('max', timeToValor(this.currentAudio.duration))
      }
 
+    this.audio.ontimeupdate = () => { 
+      progressBar.value = String(this.audio.currentTime)
+      this.currentDuration.innerText =  ValorToTime(progressBar.value);
+    }
+
+    setTimeout(() => {
+      this.audio.play();
+    }, 1000);
+
     this.audio.onended = () => this.next();
     
   },

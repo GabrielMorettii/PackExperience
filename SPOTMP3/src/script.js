@@ -32,6 +32,3 @@ const ValorToTime = function(valor){
 
   return total;
 }
-
-
-window.addEventListener("load", player.start());

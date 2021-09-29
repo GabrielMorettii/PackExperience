@@ -5,12 +5,15 @@ const fastforward = document.getElementById('fastforward');
 const gobackwards = document.getElementById('gobackwards');
 const playButtons = document.getElementsByClassName('playButton');
 const progressBar = document.getElementById('progressBar');
+const playerContainer = document.getElementById('player');
 
 let timer;
 
 for (const button of playButtons) {
   button.addEventListener('click', ()=>{
     player.currentPlaying = Number(button.getAttribute('id'));
+
+    playerContainer.classList.add('playerVisible');
 
     player.start();
   })
@@ -19,8 +22,10 @@ for (const button of playButtons) {
 pause.addEventListener('click', ()=>{
   if(player.audio.paused){
     player.audio.play();
+    pause.setAttribute('src','./assets/icons/pause.png')
   }else{
     player.audio.pause();
+    pause.setAttribute('src','./assets/icons/play.png')
   }
   
 })
@@ -36,7 +41,6 @@ gobackwards.addEventListener('click', ()=>{
 progressBar.addEventListener('input', ()=>{
   player.currentDuration.innerText =  ValorToTime(progressBar.value);
 })
-
 
 progressBar.addEventListener('change', ()=>{
   player.audio.currentTime = Number(progressBar.value);
