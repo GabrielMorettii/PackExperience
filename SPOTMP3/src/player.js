@@ -19,7 +19,7 @@ window.player = {
       this.totalDuration.innerText = this.currentAudio.duration;
       progressBar.setAttribute('max', timeToValor(this.currentAudio.duration))
      }
-     
+
     this.audio.onended = () => this.next();
     
   },

@@ -16,9 +16,30 @@ for (const button of playButtons) {
   })
 }
 
+pause.addEventListener('click', ()=>{
+  if(player.audio.paused){
+    player.audio.play();
+  }else{
+    player.audio.pause();
+  }
+  
+})
+
+fastforward.addEventListener('click', ()=>{
+  player.audio.currentTime += 15;
+})
+
+gobackwards.addEventListener('click', ()=>{
+  player.audio.currentTime -= 15;
+})
 
 progressBar.addEventListener('input', ()=>{
   player.currentDuration.innerText =  ValorToTime(progressBar.value);
+})
+
+
+progressBar.addEventListener('change', ()=>{
+  player.audio.currentTime = Number(progressBar.value);
 })
 
 volumeBar.addEventListener('mouseout', ()=>{
@@ -39,6 +60,7 @@ headphone.addEventListener('click', () => {
     headphone.setAttribute("src", "./assets/icons/mute.png")
     volumeBar.classList.remove('barVisible')
     volumeBar.value = 0
+    player.audio.volume = 0
   } else if(!volumeBar.classList.contains('barVisible') && !headphone.classList.contains('muted')){
     volumeBar.classList.add('barVisible')
   } else{
@@ -46,10 +68,13 @@ headphone.addEventListener('click', () => {
     headphone.setAttribute("src", "./assets/icons/mute.png")
     volumeBar.classList.remove('barVisible')
     volumeBar.value = 0
+    player.audio.volume = 0
   }
 })
 
 volumeBar.addEventListener('input', ()=>{
+  player.audio.volume = Number(volumeBar.value) / 100;
+
   if(volumeBar.value == "0"){
     headphone.setAttribute("src", "./assets/icons/mute.png")
   } else if( 0 < volumeBar.value && volumeBar.value < 50) {
