@@ -4,6 +4,7 @@ const pause = document.getElementById('pause');
 const fastforward = document.getElementById('fastforward');
 const gobackwards = document.getElementById('gobackwards');
 const playButtons = document.getElementsByClassName('playButton');
+const progressBar = document.getElementById('progressBar');
 
 let timer;
 
@@ -15,6 +16,10 @@ for (const button of playButtons) {
   })
 }
 
+
+progressBar.addEventListener('input', ()=>{
+  player.currentDuration.innerText =  ValorToTime(progressBar.value);
+})
 
 volumeBar.addEventListener('mouseout', ()=>{
   timer = setTimeout(()=>{

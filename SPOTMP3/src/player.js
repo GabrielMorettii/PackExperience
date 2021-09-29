@@ -4,6 +4,7 @@ window.player = {
   profileAvatar: document.querySelector('#profileAvatar'),
   audio: document.querySelector('audio'),
   totalDuration: document.querySelector('.colend'),
+  currentDuration: document.querySelector('.colstart'),
   currentPlaying: 0,
   audioData: audios,
   start(){
@@ -15,10 +16,8 @@ window.player = {
     this.audio.src = pathMidia(this.currentAudio.file);
 
     this.audio.onloadeddata = () => {  
-      let audioConverted = moment(this.audio.duration);
-      console.log(audioConverted)
-
-      this.totalDuration.innerText = durationToString;
+      this.totalDuration.innerText = this.currentAudio.duration;
+      progressBar.setAttribute('max', timeToValor(this.currentAudio.duration))
      }
      
     this.audio.onended = () => this.next();
