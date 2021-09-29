@@ -7,6 +7,7 @@ window.player = {
   currentDuration: document.querySelector('.colstart'),
   currentPlaying: 0,
   audioData: audios,
+  option: document.querySelector('.option')[0],
   start(){
     this.currentAudio = this.audioData[this.currentPlaying];
 
@@ -18,6 +19,9 @@ window.player = {
     this.audio.onloadeddata = () => {  
       this.totalDuration.innerText = this.currentAudio.duration;
       progressBar.setAttribute('max', timeToValor(this.currentAudio.duration))
+
+      option = musics[this.currentPlaying].parentElement
+      option.classList.add('playing');
      }
 
     this.audio.ontimeupdate = () => { 
@@ -29,7 +33,10 @@ window.player = {
       this.audio.play();
     }, 1000);
 
-    this.audio.onended = () => this.next();
+    this.audio.onended = () => {
+      option.classList.remove('playing');
+      this.next()
+    };
     
   },
   next(){

@@ -6,6 +6,12 @@ const gobackwards = document.getElementById('gobackwards');
 const playButtons = document.getElementsByClassName('playButton');
 const progressBar = document.getElementById('progressBar');
 const playerContainer = document.getElementById('player');
+const artistScreen = document.getElementById('artistScreen');
+const goBack = document.getElementById('goBack');
+const menu = document.getElementById('menu');
+const like = document.getElementById('like');
+const menuList = document.getElementsByClassName('menuList')[0];
+const musics = document.getElementsByClassName('music');
 
 let timer;
 
@@ -14,10 +20,43 @@ for (const button of playButtons) {
     player.currentPlaying = Number(button.getAttribute('id'));
 
     playerContainer.classList.add('playerVisible');
+    artistScreen.classList.add('playerVisible');
 
     player.start();
   })
 }
+
+goBack.addEventListener('click', ()=>{
+  playerContainer.classList.remove('playerVisible');
+  artistScreen.classList.remove('playerVisible');
+})
+
+menu.addEventListener('click', ()=>{
+  if(menuList.classList.contains('clicked')){
+    menuList.classList.remove('clicked')
+  }else{
+    menuList.classList.add('clicked')
+  }
+})
+
+like.addEventListener('click', () => {
+  
+  if(document.getElementById(`exist${player.currentPlaying}`)){
+    let musicPlaying = musics[player.currentPlaying].children[0];
+
+    musicPlaying.innerText = audios[player.currentPlaying].title;
+
+    menuList.classList.remove('clicked')
+  }else{
+    let artist = musics[player.currentPlaying].children[0];
+
+    artist.innerHTML += `<img id="exist${player.currentPlaying}" src="./assets/icons/heart.png" style="margin-left: 10px;
+    position: absolute;"/>`
+
+    menuList.classList.remove('clicked')
+  }
+  
+});
 
 pause.addEventListener('click', ()=>{
   if(player.audio.paused){

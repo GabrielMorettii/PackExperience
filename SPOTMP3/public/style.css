@@ -49,20 +49,37 @@ body{
   top: 1%;
   
   opacity: 0;
-  visibility: hidden;
- 
+  visibility: hidden; 
+
+  transform: translateX(300px);
+
+  transition: opacity 2s;
+  transition: transform 2s;
 }
 
 #player.playerVisible{
   opacity: 1;
   visibility: visible;
+  transform: translateX(0);
 
   transition: opacity 2s;
+  transition: transform 2s;
+
 }
 
 #artistScreen{
   left: 60%;
   bottom: 0;
+
+  transform: translateX(-200px);
+
+  transition: transform 2s;
+}
+
+#artistScreen.playerVisible{
+  transition: transform 2s;
+
+  transform: translateX(0)
 }
 
 .container{
@@ -82,6 +99,10 @@ header{
   font-family: Poppins, sans-serif;
 }
 
+#player header{
+  position: relative;
+}
+
 main{
   display: grid;
   grid-template-columns: 50px 200px 50px;
@@ -91,7 +112,8 @@ main{
 }
 
 main img,
-#player header img,
+#menu,
+#goBack,
 .playerButtons img{
   background: linear-gradient(45deg, rgb(50, 50, 50), rgb(30, 30, 30));
   padding: 15px;
@@ -138,6 +160,7 @@ footer::-webkit-scrollbar{
 .music{
   display: grid;
   grid-template-rows: 1fr 1fr;
+  align-items: center;
 }
 
 .music p{
@@ -205,7 +228,8 @@ main img,
   justify-self: center;
 }
 
-.select{
+.select,
+.menuList{
   position: absolute;
   width: 100px;
   height: 50px;
@@ -229,19 +253,29 @@ main img,
   visibility: hidden;
 }
 
-.select.clicked{
+.menuList{
+  bottom: -25px;
+  z-index: 10;
+}
+
+.select.clicked,
+.menuList.clicked{
   opacity: 1;
   visibility: visible;
 
   transition: opacity 1s;
 }
 
-.select p{
+
+
+.select p,
+.menuList p{
   width: 100%;  
   padding: 10px;
 }
 
-.select:hover p{
+.select:hover p,
+.menuList:hover p{
   background-color:#5a5858;
   border-radius: 5px;
 
@@ -255,7 +289,13 @@ main img,
   transition: border 1s;
 }
 
-.verified img{
+#profileAvatar.liked{
+  border: 5px solid #DE0000;
+  transition: border 1s;
+}
+
+.verified img,
+.likedMusic img{
   position: absolute;
   background: none;
   box-shadow: none;
@@ -269,11 +309,12 @@ main img,
   transition: opacity 1s;
 }
 
+.likedMusic.liked img,
 .verified.checked img{
   opacity: 1;
   visibility: visible;
   
-  transition: opacity 3s;
+  transition: opacity 1s;
 }
 
 /* Player */
@@ -396,4 +437,10 @@ input[type="range"]::-webkit-slider-thumb{
 .volume audio{
   opacity: 0;
   visibility: hidden;
+}
+
+.likedMusic{
+  position: absolute;
+  bottom: 0;
+  right: 25px;
 }
