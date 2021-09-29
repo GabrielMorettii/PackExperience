@@ -12,7 +12,7 @@
   <div class="screen">
     <div id="artistScreen" class="container">
         <header>
-          <h6>STARBOY - THE WEEKEND</h6>
+          <h6>THE WEEKEND</h6>
         </header>
         <main>
           <img class="" id="heart" src="./assets/icons/like.png" alt="HeartLike">
@@ -31,42 +31,42 @@
               <p>All I Know</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
+            <img id="0" class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>True Colors</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
+            <img id="1" class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>Star Boy</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
+            <img  id="2"  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>Blinding Lights</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
+            <img  id="3"  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>Take My Breath</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
+            <img  id="4" class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
           <div class="option">
             <div class="music">
               <p>I Feel It Coming</p>
               <span>The Weekend</span>
             </div>
-            <img  class="playButton" src="./assets/icons/play.png" alt="PlayButton">
+            <img  id="5" class="playButton" src="./assets/icons/play.png" alt="PlayButton">
           </div>
         </footer>
         <div class="modal">
@@ -82,13 +82,13 @@
       </header>
       <main>
         <div></div>
-        <img id="profileAvatar" class="" src="./assets/profile.png" alt="Profile">
+        <img id="profileAvatar" class="" src="" alt="Profile">
         <div></div>
       </main>
       <footer>
         <div class="title">
-          <h3>Starboy</h3>
-          <p>The Weekend, Daft Punk</p>
+          <h3></h3>
+          <p></p>
         </div>
         <div class="bar">
           <div class="duration">
@@ -96,11 +96,16 @@
             <div class="colend">03:00</div>
           </div>
           <input type="range" name="progressBar" id="progressBar" min="0" max="360" step="1">
+          <div class="volume">
+            <img id="headphone" class="" src="./assets/icons/volume2.png" alt="volume">
+            <input type="range" class="" name="volumeBar" id="volumeBar" min="0" max="100" value="100" step="1">
+            <audio controls src=""></audio>
+          </div>
         </div>
         <div class="playerButtons">
-          <img src="./assets/icons/backward-arrows-couple.png" alt="gobackwards">
-          <img src="./assets/icons/pause.png" alt="pause">
-          <img src="./assets/icons/fast-forward-button.png" alt="fastforward">
+          <img id="gobackwards" src="./assets/icons/backward-arrows-couple.png" alt="gobackwards">
+          <img id="pause" src="./assets/icons/pause.png" alt="pause">
+          <img id="fastforward" src="./assets/icons/fast-forward-button.png" alt="fastforward">
         </div>
       </footer>
     </div>
@@ -109,6 +114,7 @@
   <div class="circleright"></div>
 
   <script src="../src/database/data.js"></script>
+  <script src="../src/music.js"></script>
   <script src="../src/player.js"></script>
   <script src="../src/artist.js"></script>
   <script src="../src/script.js"></script>

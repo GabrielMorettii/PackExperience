@@ -284,6 +284,7 @@ main img,
 
 #player footer{
   grid-template-rows: 80px 120px 100px;
+  overflow-y: hidden;
 }
 
 .title{
@@ -343,4 +344,32 @@ input[type="range"]::-webkit-slider-thumb{
   justify-content: space-between;
   font-weight: 600;
   font-size: 14px;
+}
+
+#headphone{
+  cursor: pointer;
+}
+
+.volume{
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+}
+
+#volumeBar{
+  height: 3px;
+  width: 60px;
+  border-radius: 10px;
+  margin-left: 5px;
+
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+#volumeBar.barVisible{
+  opacity: 1;
+  visibility: visible;
+
 }

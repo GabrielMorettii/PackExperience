@@ -3,6 +3,7 @@ window.player = {
   artist: document.querySelector('.title p'),
   profileAvatar: document.querySelector('#profileAvatar'),
   audio: document.querySelector('audio'),
+  totalDuration: document.querySelector('.colend'),
   currentPlaying: 0,
   audioData: audios,
   start(){
@@ -13,6 +14,13 @@ window.player = {
     this.profileAvatar.src = pathImg(this.currentAudio.cover);
     this.audio.src = pathMidia(this.currentAudio.file);
 
+    this.audio.onloadeddata = () => {  
+      let audioConverted = moment(this.audio.duration);
+      console.log(audioConverted)
+
+      this.totalDuration.innerText = durationToString;
+     }
+     
     this.audio.onended = () => this.next();
     
   },
